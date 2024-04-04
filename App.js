@@ -5,6 +5,8 @@
 
 // equivalent to import; before es6
 // const express = require("express");
+import cors from "cors";
+
 
 // common.js is default: package.json
 import express from "express";
@@ -13,6 +15,7 @@ import Lab5 from "./Lab5.js";
 
 //create instance
 const app = express();
+app.use(cors());
 
 Lab5(app); // pass reference to express module
 Hello(app); //pass app instance
