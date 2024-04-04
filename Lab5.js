@@ -1,5 +1,33 @@
 const Lab5 = (app) => {
 
+    // 3.5 Passing JSON data to a Server in an HTTP Body
+    app.post("/a5/todos", (req, res) => {
+        const newTodo = {
+            ...req.body,
+            id: new Date().getTime(),
+        };
+        todos.push(newTodo);
+        res.json(newTodo);
+    });
+
+    app.delete("/a5/todos/:id", (req, res) => {
+        const { id } = req.params;
+        const todo = todos.find((t) => t.id === parseInt(id));
+        todos.splice(todos.indexOf(todo), 1);
+        res.sendStatus(200);
+    });
+
+    app.put("/a5/todos/:id", (req, res) => {
+        const { id } = req.params;
+        const todo = todos.find((t) => t.id === parseInt(id));
+        todo.title = req.body.title;
+        todo.description = req.body.description;
+        todo.due = req.body.due;
+        todo.completed = req.body.completed;
+        res.sendStatus(200);
+    });
+
+
     // 3.3 Working with Arrays
     const todos = [
         { id: 1, title: "Task 1", completed: false, description: "description 1"},

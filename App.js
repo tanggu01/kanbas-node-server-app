@@ -16,6 +16,7 @@ import Lab5 from "./Lab5.js";
 //create instance
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 Lab5(app); // pass reference to express module
 Hello(app); //pass app instance
