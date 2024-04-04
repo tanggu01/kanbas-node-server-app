@@ -9,10 +9,12 @@
 // common.js is default: package.json
 import express from "express";
 import Hello from "./Hello.js";
+import Lab5 from "./Lab5.js";
 
 //create instance
 const app = express();
 
+Lab5(app); // pass reference to express module
 Hello(app); //pass app instance
 
 
