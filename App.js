@@ -7,7 +7,7 @@
 // const express = require("express");
 import cors from "cors";
 import CourseRoutes from "./Kanbas/courses/routes.js";
-import ModuleRoutes from "./Kanbas/Modules/routes.js";
+import ModuleRoutes from "./Kanbas/modules/routes.js";
 
 
 // common.js is default: package.json
